@@ -36,3 +36,9 @@ set_property(TARGET position_sensor PROPERTY COMPILE_DEFINITIONS POSITION_MEAS)
 
 target_link_libraries(position_sensor ${catkin_LIBRARIES})
 
+# 追加
+add_executable(viconpos_sensor src/main.cpp src/viconpos_sensor.cpp)
+set_property(TARGET viconpos_sensor PROPERTY COMPILE_DEFINITIONS VICONPOS_MEAS)
+#add_compile_flags(viconpos_sensor "-O3")
+set_target_properties(viconpos_sensor PROPERTIES COMPILE_FLAGS "-O3")
+target_link_libraries(viconpos_sensor ${catkin_LIBRARIES})
